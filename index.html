@@ -13,19 +13,19 @@
     
     <style>
         :root {
-            --primary: #00e5ff;
-            --primary-dark: #00bcd4;
-            --secondary: #ff3d7f;
-            --accent: #ffd400;
-            --bg-dark: #07070f;
-            --bg-card: #141427;
-            --bg-card-hover: #1f1f38;
+            --primary: #3b82f6;
+            --primary-dark: #2563eb;
+            --secondary: #f97316;
+            --accent: #22c55e;
+            --bg-dark: #0a0a12;
+            --bg-card: #13131f;
+            --bg-card-hover: #1c1c2d;
             --text: #ffffff;
-            --text-secondary: #cfd3df;
-            --text-muted: #8a8aa0;
-            --border: #2e2e45;
-            --gradient-1: linear-gradient(135deg, #00e5ff 0%, #ff3d7f 100%);
-            --gradient-2: linear-gradient(135deg, #ff3d7f 0%, #ffd400 100%);
+            --text-secondary: #d1d5db;
+            --text-muted: #9ca3af;
+            --border: #374151;
+            --gradient-1: linear-gradient(135deg, #3b82f6 0%, #f97316 100%);
+            --gradient-2: linear-gradient(135deg, #f97316 0%, #22c55e 100%);
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -803,7 +803,6 @@
                 <h1 class="hero-title">
                     Hola, soy <span>David Fredy Povis Qqueccaño</span>
                 </h1>
-                <p class="hero-subtitle">Data Analyst Jr</p>
                 <div class="role-loader" aria-label="Carga de perfil">
                     <div class="role-title">Data Analyst Jr</div>
                     <div class="role-bar">
@@ -851,52 +850,48 @@
                         <div class="code-dot red"></div>
                         <div class="code-dot yellow"></div>
                         <div class="code-dot green"></div>
-                        <span class="code-title">analysis.py</span>
+                        <span class="code-title">ventas_query.sql</span>
                     </div>
                     <div class="code-content">
                         <div class="code-line">
                             <span class="line-number">1</span>
-                            <span class="code-text"><span class="code-keyword">import</span> pandas <span class="code-keyword">as</span> pd</span>
+                            <span class="code-text"><span class="code-keyword">SELECT</span></span>
                         </div>
                         <div class="code-line">
                             <span class="line-number">2</span>
-                            <span class="code-text"><span class="code-keyword">import</span> numpy <span class="code-keyword">as</span> np</span>
+                            <span class="code-text">    producto,</span>
                         </div>
                         <div class="code-line">
                             <span class="line-number">3</span>
-                            <span class="code-text"><span class="code-keyword">from</span> sklearn <span class="code-keyword">import</span> model_selection</span>
+                            <span class="code-text">    <span class="code-function">SUM</span>(ventas) <span class="code-keyword">AS</span> total_ventas,</span>
                         </div>
                         <div class="code-line">
                             <span class="line-number">4</span>
-                            <span class="code-text"></span>
+                            <span class="code-text">    <span class="code-function">AVG</span>(precio) <span class="code-keyword">AS</span> precio_promedio</span>
                         </div>
                         <div class="code-line">
                             <span class="line-number">5</span>
-                            <span class="code-text"><span class="code-comment"># Cargar y limpiar datos</span></span>
+                            <span class="code-text"><span class="code-keyword">FROM</span> ventas_2024</span>
                         </div>
                         <div class="code-line">
                             <span class="line-number">6</span>
-                            <span class="code-text">df = pd.<span class="code-function">read_csv</span>(<span class="code-string">'data.csv'</span>)</span>
+                            <span class="code-text"><span class="code-keyword">WHERE</span> estado = <span class="code-string">'completado'</span></span>
                         </div>
                         <div class="code-line">
                             <span class="line-number">7</span>
-                            <span class="code-text">df.<span class="code-function">dropna</span>(inplace=<span class="code-variable">True</span>)</span>
+                            <span class="code-text"><span class="code-keyword">GROUP BY</span> producto</span>
                         </div>
                         <div class="code-line">
                             <span class="line-number">8</span>
-                            <span class="code-text"></span>
+                            <span class="code-text"><span class="code-keyword">ORDER BY</span> total_ventas <span class="code-variable">DESC</span></span>
                         </div>
                         <div class="code-line">
                             <span class="line-number">9</span>
-                            <span class="code-text"><span class="code-comment"># Análisis exploratorio</span></span>
+                            <span class="code-text"><span class="code-keyword">LIMIT</span> <span class="code-variable">10</span>;</span>
                         </div>
                         <div class="code-line">
                             <span class="line-number">10</span>
-                            <span class="code-text">insights = df.<span class="code-function">describe</span>()</span>
-                        </div>
-                        <div class="code-line">
-                            <span class="line-number">11</span>
-                            <span class="code-text"><span class="code-function">print</span>(<span class="code-string">"✅ Análisis completado"</span>)</span>
+                            <span class="code-text"><span class="code-comment">-- ✅ Top 10 productos</span></span>
                         </div>
                     </div>
                 </div>

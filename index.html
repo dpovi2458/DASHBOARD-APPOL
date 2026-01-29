@@ -603,78 +603,29 @@
             border-top: 1px solid var(--border);
         }
 
-        .contact-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 60px;
+        .contact-simple {
+            text-align: center;
+            max-width: 700px;
+            margin: 0 auto;
         }
 
-        .contact-info h3 {
-            font-size: 2rem;
-            margin-bottom: 24px;
+        .contact-simple h3 {
+            font-size: 2.5rem;
+            margin-bottom: 16px;
         }
 
-        .contact-info p {
+        .contact-simple p {
             color: var(--text-muted);
-            margin-bottom: 32px;
-            font-size: 1.1rem;
+            font-size: 1.2rem;
+            margin-bottom: 40px;
         }
 
-        .contact-links {
+        .contact-buttons {
             display: flex;
-            flex-direction: column;
-            gap: 16px;
-        }
-
-        .contact-link {
-            display: flex;
-            align-items: center;
-            gap: 16px;
-            color: var(--text);
-            text-decoration: none;
-            font-size: 1.1rem;
-            transition: color 0.3s;
-        }
-
-        .contact-link:hover { color: var(--primary); }
-
-        .contact-link i {
-            width: 50px;
-            height: 50px;
-            background: rgba(0, 212, 170, 0.1);
-            border-radius: 12px;
-            display: flex;
-            align-items: center;
             justify-content: center;
-            color: var(--primary);
+            gap: 16px;
+            flex-wrap: wrap;
         }
-
-        .contact-form {
-            display: flex;
-            flex-direction: column;
-            gap: 20px;
-        }
-
-        .form-group input,
-        .form-group textarea {
-            width: 100%;
-            padding: 16px 20px;
-            background: var(--bg-dark);
-            border: 1px solid var(--border);
-            border-radius: 12px;
-            color: var(--text);
-            font-family: inherit;
-            font-size: 1rem;
-            transition: border-color 0.3s;
-        }
-
-        .form-group input:focus,
-        .form-group textarea:focus {
-            outline: none;
-            border-color: var(--primary);
-        }
-
-        .form-group textarea { min-height: 150px; resize: vertical; }
 
         /* Image Modal */
         .image-modal {
@@ -813,7 +764,7 @@
     <section class="hero" id="inicio">
         <div class="hero-container">
             <div class="hero-content">
-                <div class="hero-badge">Disponible: Mar, Jue, Vie y Sáb tarde</div>
+                <div class="hero-badge">Buscando oportunidades laborales</div>
                 <h1 class="hero-title">
                     Hola, soy <span>David Fredy Povis Qqueccaño</span>
                 </h1>
@@ -1085,39 +1036,20 @@
     <!-- Contact Section -->
     <section class="section contact-section" id="contacto">
         <div class="section-container">
-            <div class="contact-grid">
-                <div class="contact-info">
-                    <h3>¿Tienes un proyecto en mente?</h3>
-                    <p>Estoy disponible para proyectos freelance y consultorías. Mi horario: <strong>Martes, Jueves, Viernes y Sábados por la tarde</strong>.</p>
-                    <div class="contact-links">
-                        <a href="mailto:david.povis@unmsm.edu.pe" class="contact-link">
-                            <i class="fas fa-envelope"></i>
-                            david.povis@unmsm.edu.pe
-                        </a>
-                        <a href="https://www.linkedin.com/in/david-povis-qquecca%C3%B1o-2a855b221/" target="_blank" class="contact-link">
-                            <i class="fab fa-linkedin"></i>
-                            LinkedIn
-                        </a>
-                        <a href="https://github.com/dpovi2458" target="_blank" class="contact-link">
-                            <i class="fab fa-github"></i>
-                            github.com/dpovi2458
-                        </a>
-                    </div>
+            <div class="contact-simple">
+                <h3>¿Interesado en mi perfil?</h3>
+                <p>Estoy en búsqueda de oportunidades laborales como Data Analyst. Puedes contactarme a través de:</p>
+                <div class="contact-buttons">
+                    <a href="mailto:david.povis@unmsm.edu.pe" class="btn btn-primary">
+                        <i class="fas fa-envelope"></i> david.povis@unmsm.edu.pe
+                    </a>
+                    <a href="https://www.linkedin.com/in/david-povis-qquecca%C3%B1o-2a855b221/" target="_blank" class="btn btn-outline">
+                        <i class="fab fa-linkedin"></i> LinkedIn
+                    </a>
+                    <a href="https://github.com/dpovi2458" target="_blank" class="btn btn-outline">
+                        <i class="fab fa-github"></i> GitHub
+                    </a>
                 </div>
-                <form class="contact-form">
-                    <div class="form-group">
-                        <input type="text" placeholder="Tu nombre" required>
-                    </div>
-                    <div class="form-group">
-                        <input type="email" placeholder="Tu email" required>
-                    </div>
-                    <div class="form-group">
-                        <textarea placeholder="Tu mensaje" required></textarea>
-                    </div>
-                    <button type="submit" class="btn btn-primary" style="width: 100%; justify-content: center;">
-                        <i class="fas fa-paper-plane"></i> Enviar mensaje
-                    </button>
-                </form>
             </div>
         </div>
     </section>
